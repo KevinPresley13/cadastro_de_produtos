@@ -6,11 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de produtos</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https: //fonts.googleapis.com/css2? family= Noto+Sans:wght@400;600 & display=swap" rel="stylesheet">
 </head>
 <body>
-    
-
-    
+    <header>
+        <h1>Minha Loja Teste</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Produtos</h2>
+            <p>Lista de produtos 'minha loja teste'.</p>
+            <div class="card">
+                <div class="lineInput">
+                    <label>Produto</label>
+                    <input type="text" id="produto" placeholder="Nome do produto">
+                </div>
+                <div class="lineInput">
+                    <label>Preço</label>
+                    <input type="text" id="preço" placeholder="Digite o preço">
+                </div>
+                <button>Adicionar</button>
+            </div>
+        </section>
+        <section>
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Produto</th>
+                    <th>Valor</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Camisetas</td>
+                        <td>1900</td>
+                    </tr>
+                </tbody> 
+            </table>
+        </section>
+    </main>
     <script src="./script/script.js"></script>
 </body>
 </html>
