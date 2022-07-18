@@ -49,3 +49,19 @@ section{
 .card button:hover{
     background-color: #260041;
 }
+table{
+    border-collapse:collapse;
+    width:100%;
+    border: 1px solid #ccc;
+}
+table th{
+    background-color: #d6d4d4;
+}
+table td{
+    text-align: center;
+}
+table td img{
+    width: 1.1rem;
+    margin-right: .3rem;
+    cursor: pointer;
+}
