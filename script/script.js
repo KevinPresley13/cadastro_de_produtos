@@ -1,7 +1,6 @@
 
 class Produto {
     constructor() {
-        this.id = '';
         this.arrayProduto = [];
     }
 
@@ -12,7 +11,6 @@ class Produto {
         this.addProduto(produto);
        }
        this.updateTabela();
-       console.log(this.arrayProduto)
     }
     lerDados(){
         let produto = {}
@@ -47,8 +45,8 @@ class Produto {
                    <td>${produto.nameProduto}</td>
                    <td>${produto.valor}</td>
                    <td>
-                        <img src="./images/edit.svg" alt="editar">
-                        <img src="./images/delet.svg" alt="excluir">
+                        <img id-data=${produto.id} onclick="produto.edit(this)" src="./images/edit.svg" alt="editar">
+                        <img id-data=${produto.id} onclick="produto.delete(this)" src="./images/delet.svg" alt="excluir">
                    </td>`;
             tr += '</tr>'
         })
@@ -64,6 +62,10 @@ class Produto {
     cancelar(){
         document.querySelector('#produto').value = '';
         document.querySelector('#preço').value = '';
+    }
+    delete(id){
+        this.arrayProduto = this.arrayProduto.filter(produto=>produto.id != id.getAttribute('id-data'))
+        this.updateTabela();
     }
 }
 function idGenerator(){
