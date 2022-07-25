@@ -40,16 +40,16 @@ class Produto {
         let tbody = document.getElementById('tbody');
         let tr = '<tr>'
         let array = this.arrayProduto;
-        array.forEach(produto =>{
-            tr += `<td>${produto.id}</td>
-                   <td>${produto.nameProduto}</td>
-                   <td>${produto.valor}</td>
-                   <td>
-                        <img id-data=${produto.id} onclick="produto.edit(this)" src="./images/edit.svg" alt="editar">
-                        <img id-data=${produto.id} onclick="produto.delete(this)" src="./images/delet.svg" alt="excluir">
-                   </td>`;
+        for(let i=0;i<array.length;i++){
+            tr += `<td>${this.arrayProduto[i].id}</td>
+            <td>${this.arrayProduto[i].nameProduto}</td>
+            <td>${this.arrayProduto[i].valor}</td>
+            <td>
+                 <img id-data=${this.arrayProduto[i].id} onclick="produto.edit("${JSON.stringify(this.arrayProduto[i])}") src="./images/edit.svg" alt="editar">
+                 <img id-data=${this.arrayProduto[i].id} onclick="produto.delete(this)" src="./images/delet.svg" alt="excluir">
+            </td>`;
             tr += '</tr>'
-        })
+        }
         
         tbody.innerHTML = tr;
         document.querySelector('#produto').value = '';
@@ -62,6 +62,9 @@ class Produto {
     cancelar(){
         document.querySelector('#produto').value = '';
         document.querySelector('#preço').value = '';
+    }
+    edit(array){
+        alert(array)
     }
     delete(id){
         this.arrayProduto = this.arrayProduto.filter(produto=>produto.id != id.getAttribute('id-data'))
